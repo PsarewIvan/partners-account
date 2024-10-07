@@ -1,0 +1,43 @@
+.statistics-table-wrapper {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #d6d6d6;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    @include mobile {
+        overflow: auto;
+        width: 100vw;
+        margin-left: -16px;
+        padding: 0 16px;
+        padding-bottom: 8px;
+    }
+}
+
+.statistics-table {
+    min-width: 720px;
+    grid-template-columns: 136fr 88fr 60fr 112fr 112fr 156fr 56fr;
+
+    .table-cell-h:nth-child(7) {
+        justify-content: center;
+    }
+
+    .table-row .table-cell:nth-child(5) {
+        font-weight: 600;
+    }
+
+    .table-row .table-cell:nth-child(7) {
+        padding: 4px 8px;
+        display: flex;
+        align-items: center;
+    }
+}

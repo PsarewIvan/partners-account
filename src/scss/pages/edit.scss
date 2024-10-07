@@ -1,0 +1,18 @@
+.edit-apply-block {
+    display: flex;
+    gap: 8px;
+    padding-top: 16px;
+
+    @include mobile {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+    }
+}
+
+.edit-input {
+    max-width: 128px;
+
+    @include mobile {
+        max-width: none;
+    }
+}

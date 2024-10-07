@@ -1,0 +1,20 @@
+block content
+    include ../components/tooltip.pug
+    include ../icons/icon-exit.pug
+
+    include ../icons/icon-logo.pug
+    include ../icons/icon-logo-text.pug
+
+    header.header.js-header
+        .title-wrapper
+            h1.title Картотека
+            .title-logo
+                +icon-logo('title-logo__icon')
+                +icon-logo-text('title-logo__text-icon')
+        .user
+            .user__content.js-user-content
+                .user__name Ромашка на лугу весенним майским утром
+                .user__email konstantinopolsky_konstantin@email.ru
+            button.user__button-exit.tooltip-trigger.js-tooltip-trigger
+                +icon-exit('user__icon-exit')
+                +tooltip('Выйти')

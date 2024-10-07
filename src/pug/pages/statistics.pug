@@ -1,0 +1,49 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'index'
+
+block content
+    include ../includes/header.pug
+    include ../components/button-link.pug
+    include ../components/tooltip.pug
+    include ../icons/icon-edit.pug
+    include ../icons/icon-print.pug
+
+    .main-content
+        .main-block
+            a.promo-code-link(href='./') Вернуться к текущему промокоду
+        .main-block
+            .text-title Статистика предыдущих промокодов
+        .statistics-table-wrapper
+            .table.statistics-table
+                .table-head
+                    .table-cell-h Период
+                    .table-cell-h Промокод
+                    .table-cell-h Актив.
+                    .table-cell-h Доход
+                    .table-cell-h Выплачено
+                    .table-cell-h Долг
+                    .table-cell-h Чек
+                .table-row
+                    .table-cell 09.09.23 - 31.12.23
+                    .table-cell ГАГАРИН
+                    .table-cell 100
+                    .table-cell 100 000 ₽
+                    .table-cell 100 000 ₽
+                    .table-cell 0 ₽
+                    .table-cell
+                        button.table-button.tooltip-trigger.js-tooltip-trigger(type='button')
+                            +icon-print('table-icon')
+                            +tooltip('Напечатать')
+                .table-row
+                    .table-cell 01.01.23 - 08.09.23
+                    .table-cell ЮРА20
+                    .table-cell 7456
+                    .table-cell 7 456 000 ₽
+                    .table-cell 7 456 000 ₽
+                    .table-cell 0 ₽
+                    .table-cell
+                        button.table-button.tooltip-trigger.js-tooltip-trigger(type='button')
+                            +icon-print('table-icon')
+                            +tooltip('Напечатать')

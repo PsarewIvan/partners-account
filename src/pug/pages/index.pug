@@ -1,0 +1,52 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'index'
+
+block content
+    include ../includes/header.pug
+    include ../components/button-link.pug
+    include ../components/tooltip.pug
+    include ../icons/icon-edit.pug
+    include ../icons/icon-print.pug
+
+    .main-content
+        .main-block
+            .promo-code-content
+                .promo-code-block
+                    .promo-code-block-wrapper
+                        span.promo-code-label Промокод
+                        span.promo-code-text PRYMS
+                    a(href='./edit.html').promo-code-edit-link
+                        +icon-edit('promo-code-edit-icon')
+                .promo-code-block
+                    .promo-code-block-wrapper
+                        span.promo-code-label Активирован
+                        span.promo-code-text 310
+            a.promo-code-link(href='./statistics.html') Статистика по предыдущим промокодам
+        .main-block
+            .promo-code-block
+                .promo-code-block-wrapper
+                    span.promo-code-label Ваш доход
+                    span.promo-code-text 310 000 ₽
+            .price-content
+                .price-block
+                    span.price-block-label Выплачено
+                    span.price-block-text 240 000 ₽
+                .price-block
+                    span.price-block-label К выплате
+                    span.price-block-text.price-block-text_active 70 000 ₽
+        .main-block
+            .text-title Выплаты
+        .table.index-table
+            .table-head
+                .table-cell-h Дата
+                .table-cell-h Сумма
+                .table-cell-h Чек
+            .table-row
+                .table-cell 00.00.0000
+                .table-cell 240 000 ₽
+                .table-cell
+                    button.table-button.tooltip-trigger.js-tooltip-trigger(type='button')
+                        +icon-print('table-icon')
+                        +tooltip('Напечатать')

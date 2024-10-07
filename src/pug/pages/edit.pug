@@ -1,0 +1,18 @@
+extends ../layout.pug
+
+block variables
+  - var page = 'index'
+
+block content
+    include ../includes/header.pug
+    include ../components/text-input.pug
+    include ../components/button.pug
+    include ../components/button-link.pug
+
+    .main-content
+        .main-block
+            .edit-label Внимание! Текущий промо-код прекратит свое действие после введения и сохранения нового кода
+            +text-input('Промокод', '', '', 'PRYMS', 'edit-input', '', '')
+            .edit-apply-block
+                +button-link('Отмена', 's', 'secondary', 'edit-apply-block__button', './')
+                +button('Сохранить', 's', 'primary', 'edit-apply-block__button')
