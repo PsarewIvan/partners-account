@@ -27,6 +27,11 @@
     min-width: 720px;
     grid-template-columns: 136fr 88fr 60fr 112fr 112fr 156fr 56fr;
 
+    @include mobile {
+        min-width: auto;
+        grid-template-columns: repeat(7, max-content);
+    }
+
     .table-cell-h:nth-child(7) {
         justify-content: center;
     }
